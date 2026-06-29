@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#120607">
+    <title>NRH - Loading</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="loader-shell">
+        <section class="hero-panel" aria-label="Chargement du serveur NRH">
+            <div class="smoke smoke-a"></div>
+            <div class="smoke smoke-b"></div>
+            <div class="blade blade-a"></div>
+            <div class="blade blade-b"></div>
+
+            <div class="content">
+                <div class="brand-row">
+                    <img class="brand-mark" src="assets/logo_solo.png" alt="NRH">
+                    <div class="brand-text">
+                        <p class="eyebrow">Serveur Roleplay Demon Slayer</p>
+                        <h1>Bienvenue sur <span>NRH</span></h1>
+                        <p class="subtitle">Respire, aiguise ta lame, l'aventure commence dans un instant.</p>
+                    </div>
+                </div>
+
+                <div class="server-card">
+                    <img class="server-logo" src="assets/logo_full_transparent.png" alt="">
+                    <div>
+                        <p class="server-label">Connexion</p>
+                        <h2 id="serverName">NRH</h2>
+                        <p id="statusText">Preparation du chargement...</p>
+                    </div>
+                </div>
+
+                <div class="meta-grid">
+                    <div class="meta-box">
+                        <span>Carte</span>
+                        <strong id="mapName">Chargement</strong>
+                    </div>
+                    <div class="meta-box">
+                        <span>Mode</span>
+                        <strong id="gameMode">Demon Slayer RP</strong>
+                    </div>
+                    <a class="meta-box link-box" id="discordLink" href="https://discord.gg/26yzn3ZVPp" target="_blank" rel="noreferrer">
+                        <span>Discord</span>
+                        <strong>Rejoindre</strong>
+                    </a>
+                </div>
+
+                <div class="progress-wrap" aria-live="polite">
+                    <div class="progress-head">
+                        <span id="progressLabel">Chargement en cours</span>
+                        <strong id="progressPercent">0%</strong>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                        <div class="progress-shine"></div>
+                    </div>
+                    <p id="fileText" class="file-text">Synchronisation avec le serveur...</p>
+                </div>
+            </div>
+
+            <aside class="art-side">
+                <div class="moon"></div>
+                <div class="crest">
+                    <img src="assets/logo_solo.png" alt="">
+                </div>
+                <div class="rank-pill">Nouvelle Ere</div>
+            </aside>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
