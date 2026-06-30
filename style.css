@@ -49,22 +49,22 @@ body::after {
     position: relative;
     z-index: 1;
     width: 100%;
-    min-height: 100%;
-    padding: clamp(26px, 4vw, 70px);
-    display: grid;
-    place-items: center;
+    height: 100%;
+    min-height: 100vh;
+    padding: 0;
+    display: block;
 }
 
 .hero-panel {
     position: relative;
-    width: min(1560px, 100%);
-    height: min(820px, calc(100vh - clamp(52px, 8vw, 140px)));
-    min-height: 560px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    border: 0;
     background:
-        linear-gradient(90deg, rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.18) 58%, rgba(111, 14, 20, 0.42)),
-        rgba(8, 6, 8, 0.45);
-    box-shadow: 0 34px 95px rgba(0, 0, 0, 0.58);
+        linear-gradient(90deg, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.56) 43%, rgba(111, 14, 20, 0.54) 100%),
+        rgba(8, 6, 8, 0.68);
+    box-shadow: none;
     overflow: hidden;
 }
 
@@ -75,50 +75,56 @@ body::after {
     background:
         repeating-linear-gradient(112deg, transparent 0 118px, rgba(255, 255, 255, 0.045) 120px 122px, transparent 124px 240px),
         linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 32%);
-    opacity: 0.75;
+    opacity: 0.9;
 }
 
 .hero-panel::after {
     content: "";
     position: absolute;
     inset: 0;
-    border: 18px solid transparent;
-    box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.95);
+    border: 0;
+    box-shadow:
+        inset 0 0 120px rgba(0, 0, 0, 0.96),
+        inset 0 -130px 220px rgba(0, 0, 0, 0.58);
     pointer-events: none;
 }
 
 .content {
     position: relative;
     z-index: 3;
-    width: min(720px, 48vw);
+    width: clamp(680px, 42vw, 860px);
     height: 100%;
-    padding: clamp(44px, 5vw, 86px);
+    padding: clamp(48px, 6vw, 110px) 0 clamp(48px, 6vw, 110px) clamp(70px, 9vw, 170px);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: clamp(20px, 3vh, 34px);
+    align-items: center;
+    gap: clamp(22px, 3.2vh, 42px);
 }
 
 .brand-row {
+    width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: clamp(18px, 2vw, 30px);
+    justify-content: center;
+    gap: clamp(12px, 1.4vw, 22px);
+    text-align: center;
 }
 
 .brand-mark {
-    width: clamp(98px, 9vw, 150px);
+    width: clamp(118px, 7.4vw, 168px);
     aspect-ratio: 1;
     object-fit: contain;
     filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.48));
     animation: floatMark 4.6s ease-in-out infinite;
 }
 
-.eyebrow,
 .server-label,
 .meta-box span {
-    margin: 0 0 8px;
+    margin: 0 0 10px;
     color: var(--gold);
-    font-size: clamp(12px, 1vw, 14px);
+    font-size: clamp(13px, 0.9vw, 16px);
     font-weight: 800;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -126,9 +132,9 @@ body::after {
 
 h1 {
     margin: 0;
-    max-width: 720px;
-    font-size: clamp(44px, 5.6vw, 92px);
-    line-height: 0.9;
+    max-width: 760px;
+    font-size: clamp(64px, 5.15vw, 108px);
+    line-height: 0.92;
     letter-spacing: 0;
     text-transform: uppercase;
 }
@@ -140,10 +146,10 @@ h1 span {
 }
 
 .subtitle {
-    width: min(640px, 100%);
-    margin: 14px 0 0;
+    width: min(720px, 100%);
+    margin: 16px auto 0;
     color: var(--muted);
-    font-size: clamp(15px, 1.35vw, 21px);
+    font-size: clamp(18px, 1.25vw, 24px);
     line-height: 1.45;
 }
 
@@ -155,45 +161,62 @@ h1 span {
 }
 
 .server-card {
-    width: min(600px, 100%);
-    min-height: 112px;
-    padding: 18px 22px;
+    width: min(720px, 100%);
+    min-height: 136px;
+    padding: clamp(18px, 1.5vw, 26px);
     display: flex;
     align-items: center;
-    gap: 18px;
-    box-shadow: inset 3px 0 0 rgba(214, 31, 42, 0.88);
+    justify-content: center;
+    gap: clamp(18px, 1.7vw, 30px);
+    box-shadow:
+        inset 4px 0 0 rgba(214, 31, 42, 0.92),
+        0 20px 56px rgba(0, 0, 0, 0.28);
+}
+
+.server-card > div {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
 }
 
 .server-logo {
-    width: 96px;
-    height: 72px;
+    width: clamp(112px, 7vw, 150px);
+    height: clamp(76px, 5vw, 108px);
     object-fit: contain;
+    flex: 0 0 auto;
 }
 
 h2 {
     margin: 0;
-    font-size: clamp(22px, 2.4vw, 34px);
+    font-size: clamp(30px, 2.25vw, 44px);
+    line-height: 1.05;
     letter-spacing: 0;
     text-transform: uppercase;
+    overflow-wrap: anywhere;
 }
 
 #statusText {
-    margin: 6px 0 0;
-    min-height: 22px;
+    margin: 10px 0 0;
+    min-height: 24px;
     color: var(--muted);
-    font-size: clamp(13px, 1.1vw, 16px);
+    font-size: clamp(15px, 1vw, 18px);
 }
 
 .meta-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 14px;
-    width: min(600px, 100%);
+    gap: clamp(14px, 1.2vw, 22px);
+    width: min(720px, 100%);
 }
 
 .meta-box {
-    min-height: 82px;
-    padding: 16px 18px;
+    min-height: 100px;
+    padding: 18px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     color: inherit;
     text-decoration: none;
     transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
@@ -202,9 +225,10 @@ h2 {
 .meta-box strong {
     display: block;
     overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-size: clamp(16px, 1.35vw, 21px);
+    width: 100%;
+    font-size: clamp(19px, 1.35vw, 26px);
+    line-height: 1.1;
+    overflow-wrap: anywhere;
 }
 
 .link-box:hover {
@@ -214,7 +238,7 @@ h2 {
 }
 
 .progress-wrap {
-    width: min(600px, 100%);
+    width: min(720px, 100%);
 }
 
 .progress-head {
@@ -223,13 +247,13 @@ h2 {
     gap: 16px;
     margin-bottom: 10px;
     color: rgba(218, 218, 218, 0.72);
-    font-size: clamp(16px, 1.4vw, 21px);
+    font-size: clamp(20px, 1.35vw, 27px);
     font-weight: 800;
 }
 
 .progress-bar {
     position: relative;
-    height: clamp(15px, 1.2vw, 20px);
+    height: clamp(20px, 1.35vw, 28px);
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.12);
     background:
@@ -256,19 +280,20 @@ h2 {
 }
 
 .file-text {
-    margin: 12px 0 0;
-    min-height: 22px;
+    margin: 14px 0 0;
+    min-height: 24px;
     color: rgba(244, 240, 234, 0.55);
-    font-size: clamp(12px, 1.1vw, 15px);
+    font-size: clamp(14px, 1vw, 18px);
+    text-align: center;
 }
 
 .art-side {
     position: absolute;
     z-index: 2;
-    right: clamp(28px, 5vw, 110px);
+    right: clamp(40px, 6vw, 150px);
     top: 0;
     bottom: 0;
-    width: min(42vw, 680px);
+    width: min(48vw, 880px);
     display: grid;
     place-items: center;
     pointer-events: none;
@@ -276,19 +301,19 @@ h2 {
 
 .moon {
     position: absolute;
-    width: min(54vw, 760px);
+    width: min(62vw, 940px);
     aspect-ratio: 1;
     border-radius: 50%;
     background:
         radial-gradient(circle at 42% 36%, rgba(255, 234, 218, 0.95), rgba(233, 177, 77, 0.42) 19%, rgba(151, 24, 31, 0.2) 34%, transparent 62%);
     filter: blur(2px);
-    opacity: 0.22;
+    opacity: 0.28;
     animation: pulseMoon 6s ease-in-out infinite;
 }
 
 .crest {
     position: relative;
-    width: min(32vw, 470px);
+    width: min(36vw, 650px);
     aspect-ratio: 1;
     display: grid;
     place-items: center;
@@ -320,13 +345,14 @@ h2 {
 
 .rank-pill {
     position: absolute;
-    right: 5%;
-    bottom: 14%;
-    padding: 11px 18px;
+    right: 8%;
+    bottom: 16%;
+    padding: 15px 24px;
     border: 1px solid rgba(233, 177, 77, 0.48);
     background: rgba(12, 8, 9, 0.72);
     color: var(--gold);
     font-weight: 900;
+    font-size: clamp(14px, 0.9vw, 18px);
     text-transform: uppercase;
     letter-spacing: 0.11em;
     box-shadow: 0 0 28px rgba(214, 31, 42, 0.18);
@@ -343,11 +369,11 @@ h2 {
 }
 
 .blade-a {
-    left: 50%;
+    left: 52%;
 }
 
 .blade-b {
-    left: 58%;
+    left: 60%;
     opacity: 0.55;
 }
 
@@ -400,13 +426,9 @@ h2 {
 }
 
 @media (max-width: 1050px) {
-    .hero-panel {
-        min-height: 640px;
-    }
-
     .content {
         width: 100%;
-        padding-right: clamp(32px, 6vw, 74px);
+        padding: clamp(36px, 7vw, 80px);
     }
 
     .art-side {
@@ -421,22 +443,14 @@ h2 {
 }
 
 @media (max-width: 680px) {
-    .loader-shell {
-        padding: 16px;
-    }
-
-    .hero-panel {
-        height: calc(100vh - 32px);
-        min-height: 620px;
-    }
-
     .brand-row,
     .server-card {
-        align-items: flex-start;
+        align-items: center;
     }
 
     .brand-row {
         flex-direction: column;
+        text-align: center;
     }
 
     .server-logo {
@@ -444,7 +458,7 @@ h2 {
     }
 
     .content {
-        padding: 30px 24px;
+        padding: 26px 20px;
     }
 
     h1 {
